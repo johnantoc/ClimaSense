@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkewedCard renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 0.4,
+        "height": 100,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#000119",
+          "borderBottomRightRadius": 80,
+          "flex": 1,
+        },
+      ]
+    }
+  />
+</View>
+`;
