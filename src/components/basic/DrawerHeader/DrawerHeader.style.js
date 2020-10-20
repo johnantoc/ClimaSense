@@ -9,8 +9,12 @@ const DrawerHeaderStyles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
-  text: {
+  textContainer: {
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
     color: "#000119",
     fontSize: 30,
     alignContent: "center",

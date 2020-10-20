@@ -10,8 +10,6 @@ import InfoCard from "../../components/complex/InfoCard/InfoCard";
 import HourlyData from "../../components/complex/HourlyData/HourlyData";
 import HomeStyles from "./Home.style";
 
-import { getWeatherData } from "../../store/actions/index";
-
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -36,10 +34,6 @@ const Home = (props) => {
       Dimensions.removeEventListener("change", onDimensionChange);
     };
   });
-
-  useEffect(() => {
-    dispatch(getWeatherData());
-  }, []);
 
   return (
     <View

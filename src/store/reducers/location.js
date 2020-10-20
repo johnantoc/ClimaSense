@@ -1,6 +1,8 @@
-import { geolocation } from "../actions/actionTypes";
+import { geolocation, selectLoc } from "../actions/actionTypes";
 
-const initialState = {};
+const initialState = {
+  selectedLoc: null,
+};
 
 const location = function (state = initialState, { type, payload }) {
   switch (type) {
@@ -8,6 +10,11 @@ const location = function (state = initialState, { type, payload }) {
       return {
         ...state,
         ...payload,
+      };
+    case selectLoc.CLEARSELECTEDLOC:
+      return {
+        ...state,
+        ...{ selectedLoc: null },
       };
     default:
       return state;

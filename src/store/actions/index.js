@@ -1,7 +1,10 @@
-import { weather, options, geolocation } from "./actionTypes";
+import { weather, options, geolocation, selectLoc } from "./actionTypes";
 
-export function getWeatherData() {
-  return { type: weather.GETWEATHERDATA };
+export function getWeatherData(data) {
+  return {
+    type: weather.GETWEATHERDATA,
+    payload: data,
+  };
 }
 
 export function saveWeatherData(data) {
@@ -9,6 +12,10 @@ export function saveWeatherData(data) {
     type: weather.SAVEWEATHERDATA,
     payload: data,
   };
+}
+
+export function clearWeatherData() {
+  return { type: weather.CLEARWEATHERDATA };
 }
 
 export function saveSetttings(data) {
@@ -29,5 +36,18 @@ export function saveLocation(data) {
   return {
     type: geolocation.SAVELOCATION,
     payload: data,
+  };
+}
+
+export function getSelectedLocation(data) {
+  return {
+    type: selectLoc.GETSELECTEDLOC,
+    payload: data,
+  };
+}
+
+export function clearSelectedLocation() {
+  return {
+    type: selectLoc.CLEARSELECTEDLOC,
   };
 }

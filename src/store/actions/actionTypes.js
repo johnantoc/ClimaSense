@@ -1,6 +1,7 @@
 export const weather = {
   GETWEATHERDATA: "GETWEATHERDATA",
   SAVEWEATHERDATA: "SAVEWEATHERDATA",
+  CLEARWEATHERDATA: "CLEARWEATHERDATA",
 };
 
 export const options = {
@@ -10,4 +11,9 @@ export const options = {
 export const geolocation = {
   GETLOCATION: "GETLOCATION",
   SAVELOCATION: "SAVELOCATION",
+};
+
+export const selectLoc = {
+  GETSELECTEDLOC: "GETSELECTEDLOC",
+  CLEARSELECTEDLOC: "CLEARSELECTEDLOC",
 };

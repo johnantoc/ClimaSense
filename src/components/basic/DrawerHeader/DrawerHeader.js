@@ -10,7 +10,9 @@ import DrawerHeaderStyles from "./DrawerHeader.style";
 const DrawerHeader = () => {
   return (
     <View style={DrawerHeaderStyles.container}>
-      <Text style={DrawerHeaderStyles.text}>ClimaSense</Text>
+      <View style={DrawerHeaderStyles.textContainer}>
+        <Text style={DrawerHeaderStyles.text}>ClimaSense</Text>
+      </View>
     </View>
   );
 };

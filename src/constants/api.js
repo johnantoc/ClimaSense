@@ -1,8 +1,11 @@
-export const apiOWM = "45ebcd7f3f658d38db8e4eaf2071cae8";
+export const owmApi =
+  "https://api.openweathermap.org/data/2.5/onecall?appid=45ebcd7f3f658d38db8e4eaf2071cae8";
 export const apiPix =
   "https://pixabay.com/api/?key=18746234-7183eb6f3f86f0479936ea27d";
-export const locationapi =
+export const locationReverseapi =
   "https://us1.locationiq.com/v1/reverse.php?key=pk.9bd47320cc0f63fe16c714091a1dd01a";
+export const locationSearchapi =
+  "https://us1.locationiq.com/v1/search.php?key=pk.9bd47320cc0f63fe16c714091a1dd01a";
 
 const data = {
   lat: 10.51,
@@ -1199,6 +1202,39 @@ export const locationData = {
   boundingbox: ["10.2056264", "10.8456264", "75.8932542", "76.5332542"],
   distance: 6565,
 };
+
+export const locationSearchData = [
+  {
+    place_id: "294765357",
+    licence: "https://locationiq.com/attribution",
+    osm_type: "relation",
+    osm_id: "11340542",
+    boundingbox: ["10.4946058", "10.548772", "76.2574553", "76.3403678"],
+    lat: "10.521727",
+    lon: "76.2909060056525",
+    display_name:
+      "Nadathara, Mannuthy Urakkam Road, Kuriyachira, Thrissur, Thrissur, Kerala, 680301, India",
+    class: "boundary",
+    type: "local_authority",
+    importance: 0.11100000000000002,
+    address: {
+      name: "Nadathara",
+      road: "Mannuthy Urakkam Road",
+      suburb: "Kuriyachira",
+      city: "Thrissur",
+      county: "Thrissur",
+      state: "Kerala",
+      postcode: "680301",
+      country: "India",
+      country_code: "in",
+    },
+    extratags: { wikidata: "Q13112783" },
+    namedetails: {
+      name: "Nadathara",
+      "name:ml": "\u0d28\u0d1f\u0d24\u0d4d\u0d24\u0d31",
+    },
+  },
+];
 
 export const imageBg =
   "https://images.unsplash.com/photo-1598720235330-b6f8b5a23010?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80";

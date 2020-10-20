@@ -60,7 +60,7 @@ const parseCurrentData = ({
  */
 const parseDailyData = (dailyData) => {
   return [...dailyData]
-    .filter((dayData, index) => index <= 6)
+    .filter((dayData, index) => index >= 1)
     .map((dayData) => {
       const dataObj = {};
       const {

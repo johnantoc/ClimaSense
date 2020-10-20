@@ -45,6 +45,7 @@ const SkewedCardStyles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 20,
     marginLeft: 8,
+    textTransform: "capitalize",
     fontFamily: "roboto-condensed-light",
   },
   temperatureContainer: {
@@ -68,6 +69,11 @@ const SkewedCardStyles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 50,
     fontFamily: "roboto-condensed-light",
+  },
+  loader: {
+    position: "absolute",
+    top: "20%",
+    left: "46%",
   },
 });
 

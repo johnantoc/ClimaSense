@@ -5,6 +5,7 @@ import Home from "../screens/Home/Home";
 import Details from "../screens/Details/Details";
 import Settings from "../screens/Settings/Settings";
 import Favorites from "../screens/Favorites/Favorites";
+import SearchIcon from "../components/basic/SearchIcon/SearchIcon";
 import HamburgerIcon from "../components/basic/HamburgerIcon/HamburgerIcon";
 
 const favStack = createStackNavigator();
@@ -69,6 +70,9 @@ export const HomeStackNavigation = () => (
           name={name}
           component={screen.component}
           options={({ navigation }) => {
+            const search = {
+              headerRight: () => <SearchIcon />,
+            };
             const menu = screen.hamburgerMenu
               ? {
                   headerLeft: () => (
@@ -81,6 +85,7 @@ export const HomeStackNavigation = () => (
             return {
               ...screen.options,
               ...menu,
+              ...search,
             };
           }}
         />
