@@ -2,6 +2,7 @@ import { nanoid } from "nanoid/non-secure";
 
 export default class WeatherHourlyData {
   constructor({
+    date,
     dateStr,
     hour,
     tempC,
@@ -18,6 +19,7 @@ export default class WeatherHourlyData {
     condition,
   }) {
     this.id = nanoid();
+    this.date = date;
     this.dateStr = dateStr;
     this.hour = hour;
     this.tempC = tempC;

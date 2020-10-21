@@ -26,6 +26,7 @@ export default class WeatherDailyData {
     icon,
     uvIndex,
     dateStr,
+    date,
   }) {
     this.id = nanoid();
     this.sunrise = sunrise;
@@ -52,5 +53,6 @@ export default class WeatherDailyData {
     this.icon = icon;
     this.uvIndex = uvIndex;
     this.dateStr = dateStr;
+    this.date = date;
   }
 }

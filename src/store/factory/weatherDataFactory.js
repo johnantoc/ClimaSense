@@ -76,8 +76,10 @@ const parseDailyData = (dailyData) => {
         weather,
         uvi,
       } = dayData;
-      dataObj.date = moment.unix(dt);
-      dataObj.dateStr = dataObj.date.format("ddd DD");
+
+      const dateObj = moment.unix(dt);
+      dataObj.date = dt;
+      dataObj.dateStr = dateObj.format("ddd DD");
       dataObj.sunrise = moment.unix(sunrise).format("hh A");
       dataObj.sunset = moment.unix(sunset).format("hh A");
       dataObj.tempMaxC = parseInt(max.toFixed(1));
@@ -126,9 +128,11 @@ const parseHourlyData = (hourlyData) => {
         wind_deg,
         weather,
       } = hourData;
-      dataObj.date = moment.unix(dt);
-      dataObj.dateStr = dataObj.date.format("ddd, DD MMM YYYY");
-      dataObj.hour = dataObj.date.format("hh A");
+
+      const dateObj = moment.unix(dt);
+      dataObj.date = dt;
+      dataObj.dateStr = dateObj.format("ddd, DD MMM YYYY");
+      dataObj.hour = dateObj.format("hh A");
       dataObj.tempC = parseInt(temp.toFixed(1));
       dataObj.tempFeelC = parseInt(feels_like.toFixed(1));
       dataObj.tempF = getFarenheit(temp);

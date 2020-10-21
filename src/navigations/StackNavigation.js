@@ -29,6 +29,7 @@ const homeStackScreens = {
       title: "ClimaSense",
     },
     hamburgerMenu: true,
+    search: true,
   },
   Details: {
     component: Details,
@@ -36,6 +37,7 @@ const homeStackScreens = {
       title: "Details",
     },
     hamburgerMenu: false,
+    search: false,
   },
 };
 
@@ -70,9 +72,11 @@ export const HomeStackNavigation = () => (
           name={name}
           component={screen.component}
           options={({ navigation }) => {
-            const search = {
-              headerRight: () => <SearchIcon />,
-            };
+            const search = screen.search
+              ? {
+                  headerRight: () => <SearchIcon />,
+                }
+              : {};
             const menu = screen.hamburgerMenu
               ? {
                   headerLeft: () => (
