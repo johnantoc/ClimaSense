@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const HourlyGraphStyles = StyleSheet.create({
+const DailyGraphStyles = StyleSheet.create({
   container: {
     flex: 0.5,
     paddingHorizontal: 10,
@@ -28,4 +28,4 @@ const HourlyGraphStyles = StyleSheet.create({
   },
 });
 
-export default HourlyGraphStyles;
+export default DailyGraphStyles;

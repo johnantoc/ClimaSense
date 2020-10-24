@@ -2,31 +2,32 @@ import { StyleSheet } from "react-native";
 
 const InfoCardStyles = StyleSheet.create({
   container: {
-    flex: 0.4,
+    flex: 0.6,
     backgroundColor: "transparent",
   },
   mainArea: {
     flex: 1,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
+    paddingVertical: 4,
+    paddingHorizontal: 10,
     justifyContent: "flex-start",
     backgroundColor: "rgba(255, 255, 255, 0.9)",
   },
   headingContainer: {
     flexDirection: "row",
-    paddingBottom: 10,
+    paddingBottom: 4,
     justifyContent: "space-between",
-    borderBottomColor: "rgba(0, 1, 25, 0.1)",
+    borderBottomColor: "rgba(255, 255, 255, 0.1)",
     borderBottomWidth: 1,
+  },
+  headingView: {
+    marginTop: 8,
   },
   heading: {
     color: "#000119",
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: "roboto-condensed-bold",
   },
   buttonContainer: {
-    paddingTop: 5,
-    paddingHorizontal: 15,
     alignItems: "center",
   },
   details: {
@@ -36,6 +37,41 @@ const InfoCardStyles = StyleSheet.create({
   },
   listContainer: {
     flex: 1,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+  },
+  dayItemContainer: {
+    flex: 1,
+    height: 40,
+    backgroundColor: "rgb(255, 255, 255)",
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "65%",
+    overflow: "hidden",
+  },
+  modalView: {
+    flex: 1,
+    backgroundColor: "rgb(0, 0, 0)",
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    overflow: "hidden",
+  },
+  openButton: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#dd2c00",
+    padding: 10,
+    overflow: "hidden",
+  },
+  textStyle: {
+    color: "#ffffff",
+    fontSize: 18,
+    fontFamily: "roboto-condensed-regular",
   },
 });
 

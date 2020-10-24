@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, ActivityIndicator } from "react-native";
-import { AreaChart, YAxis, XAxis } from "react-native-svg-charts";
+import { BarChart, YAxis, XAxis } from "react-native-svg-charts";
 import * as shape from "d3-shape";
 import * as scale from "d3-scale";
 import moment from "moment";
 
-import {
-  Gradient,
-  LinePath,
-  CustomGrid,
-} from "../GraphComponents/GraphComponents";
-import HourlyGraphStyles from "./HourlyGraph.style";
+import { Gradient, CustomGrid } from "../GraphComponents/GraphComponents";
+import DailyGraphStyles from "./DailyGraph.style";
 
-const HourlyGraph = ({ data }) => {
-  const graphId = "hourlyGraph";
+const DailyGraph = ({ data }) => {
+  const graphId = "dailyGraph";
   const dataInit = [...data].map((item) => ({ x: item.x, y: 0 }));
   const [dataSet, setDataSet] = useState(dataInit);
 
@@ -28,7 +24,7 @@ const HourlyGraph = ({ data }) => {
   }, []);
 
   return (
-    <View style={HourlyGraphStyles.container}>
+    <View style={DailyGraphStyles.container}>
       {!data ? (
         <ActivityIndicator
           size="large"
@@ -37,46 +33,44 @@ const HourlyGraph = ({ data }) => {
           animating={!data}
         />
       ) : (
-        <View style={HourlyGraphStyles.outerContainer}>
-          <View style={HourlyGraphStyles.legendContainer}>
-            <Text style={HourlyGraphStyles.legend}>Next 24 Hour </Text>
+        <View style={DailyGraphStyles.outerContainer}>
+          <View style={DailyGraphStyles.legendContainer}>
+            <Text style={DailyGraphStyles.legend}>Next 7 Days </Text>
           </View>
-          <View style={HourlyGraphStyles.areaGraphContainer}>
+          <View style={DailyGraphStyles.areaGraphContainer}>
             <YAxis
               data={dataSet}
-              numberOfTicks={4}
+              numberOfTicks={8}
               yAccessor={({ item }) => item.y}
               style={{ marginBottom: 40 }}
               contentInset={{ top: 16, bottom: 16 }}
               svg={{ fontSize: 10, fill: "rgba(255, 255, 255, 0.8)" }}
             />
             <View style={{ flex: 1, marginLeft: 10 }}>
-              <AreaChart
-                style={HourlyGraphStyles.areaGraph}
-                data={dataSet}
+              <BarChart
+                style={DailyGraphStyles.areaGraph}
+                data={data}
+                svg={{ fill: `url(#${graphId})` }}
                 xAccessor={({ item }) => item.x}
                 yAccessor={({ item }) => item.y}
                 curve={shape.curveNatural}
-                xScale={scale.scaleTime}
+                yScale={scale.scaleBand}
                 contentInset={{ top: 16, bottom: 16 }}
-                svg={{ fill: `url(#${graphId})` }}
               >
-                <LinePath color={"#94292b"} />
-                <Gradient id={graphId} color={"#FFCB2D"} stopOpacity={1} />
-                <CustomGrid filterBy={2} />
-              </AreaChart>
+                <Gradient id={graphId} color={"#FFCB2D"} />
+                <CustomGrid />
+              </BarChart>
               <XAxis
                 style={{ height: 40 }}
                 data={dataSet}
                 xAccessor={({ item }) => item.x}
-                contentInset={{ left: 6, right: 14 }}
-                formatLabel={(value) => moment.unix(value).format("hh A")}
+                contentInset={{ left: 24, right: 20 }}
+                formatLabel={(value) => moment.unix(value).format("ddd DD")}
                 svg={{
                   fontSize: 8,
                   fill: "rgba(255, 255, 255, 0.8)",
-                  rotation: 45,
-                  originY: 18,
-                  y: 10,
+                  originY: 0,
+                  y: 6,
                 }}
               />
             </View>
@@ -87,4 +81,4 @@ const HourlyGraph = ({ data }) => {
   );
 };
 
-export default HourlyGraph;
+export default DailyGraph;

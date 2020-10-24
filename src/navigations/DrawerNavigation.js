@@ -12,7 +12,7 @@ const DrawerNav = createDrawerNavigator();
 const drawerScreens = {
   Home: HomeStackNavigation,
   Settings: SettingsStackNavigation,
-  Favorites: FavStackNavigation,
+  // Favorites: FavStackNavigation,
 };
 
 /**

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const HourlyDataStyles = StyleSheet.create({
   container: {
-    flex: 0.2,
+    flex: 0.4,
     backgroundColor: "transparent",
   },
   mainArea: {

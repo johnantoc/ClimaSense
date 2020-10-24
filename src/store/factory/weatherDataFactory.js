@@ -31,6 +31,7 @@ const parseCurrentData = ({
   wind_speed,
   wind_deg,
   weather,
+  clouds,
 }) => {
   return new WeatherData({
     date: moment.unix(dt),
@@ -49,6 +50,7 @@ const parseCurrentData = ({
     weather: weather[0].main,
     weatherId: weather[0].id,
     icon: weather[0].icon,
+    clouds,
     condition: weather[0].description,
   });
 };
@@ -75,6 +77,7 @@ const parseDailyData = (dailyData) => {
         wind_deg,
         weather,
         uvi,
+        clouds,
       } = dayData;
 
       const dateObj = moment.unix(dt);
@@ -103,6 +106,7 @@ const parseDailyData = (dailyData) => {
       dataObj.icon = weather[0].icon;
       dataObj.condition = weather[0].description;
       dataObj.uvIndex = uvi;
+      dataObj.clouds = clouds;
 
       return new WeatherDailyData(dataObj);
     });

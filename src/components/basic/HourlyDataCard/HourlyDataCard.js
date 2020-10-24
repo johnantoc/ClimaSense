@@ -6,7 +6,7 @@ import HourlyDataCardStyles from "./HourlyDataCard.style";
 
 const HourlyDataCard = ({ item, tempUnitF }) => (
   <View style={HourlyDataCardStyles.item}>
-    <FontAwesome5 name="cloud-sun" size={24} color="#94292b" />
+    <FontAwesome5 name="cloud-sun" size={24} color="#dd2c00" />
     <Text style={HourlyDataCardStyles.hour}>{item.hour}</Text>
     <View style={HourlyDataCardStyles.temperatureContainer}>
       <Text style={HourlyDataCardStyles.temperature}>

@@ -4,33 +4,10 @@ const DayItemStyles = StyleSheet.create({
   item: {
     flex: 1,
     flexDirection: "row",
-    paddingHorizontal: 15,
-    paddingVertical: 2,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottomColor: "rgba(0, 1, 25, 0.1)",
-    borderBottomWidth: 1,
-  },
-  temperatureContainer: {
-    flex: 0.2,
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-  },
-  temperature: {
-    color: "#000119",
-    fontSize: 22,
-    fontFamily: "roboto-condensed-light",
-  },
-  degree: {
-    color: "#000119",
-    fontSize: 10,
-    fontFamily: "roboto-condensed-light",
-  },
-  unit: {
-    color: "#000119",
-    fontSize: 18,
-    fontFamily: "roboto-condensed-light",
   },
   iconContainer: {
     flex: 0.2,
@@ -41,6 +18,7 @@ const DayItemStyles = StyleSheet.create({
   desc: {
     color: "#000119",
     fontSize: 14,
+    textTransform: "capitalize",
     fontFamily: "roboto-condensed-light",
   },
   dateContainer: {

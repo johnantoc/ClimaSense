@@ -6,6 +6,7 @@ import React from "react";
 import { View } from "react-native";
 import { useSelector } from "react-redux";
 
+import DailyGraph from "../../components/basic/DailyGraph/DailyGraph";
 import HourlyGraph from "../../components/basic/HourlyGraph/HourlyGraph";
 import DetailsStyles from "./Details.style";
 
@@ -20,14 +21,18 @@ const Details = () => {
     };
   });
   const { hourlyData, dailyData } = weather;
-  const areaGraphData = hourlyData.map((hourData) => ({
+  const hourlyGraphData = hourlyData.map((hourData) => ({
     x: hourData.date,
     y: tempUnitF ? hourData.tempF : hourData.tempC,
   }));
-
+  const dailyGraphData = dailyData.map((dayData) => ({
+    x: dayData.date,
+    y: tempUnitF ? dayData.tempDayF : dayData.tempDayC,
+  }));
   return (
     <View style={[DetailsStyles.container]}>
-      <HourlyGraph data={areaGraphData} />
+      <HourlyGraph data={hourlyGraphData} />
+      <DailyGraph data={dailyGraphData} />
     </View>
   );
 };

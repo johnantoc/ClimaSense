@@ -3,19 +3,20 @@
  */
 
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
+import { TouchableNativeFeedback } from "react-native-gesture-handler";
 
 import ButtonTextStyles from "./ButtonText.style";
 
 const ButtonText = ({ title, onPressHandler, textStyles }) => {
   return (
-    <TouchableOpacity
+    <TouchableNativeFeedback
       activeOpacity={0.8}
       style={ButtonTextStyles.buttonView}
       onPress={onPressHandler}
     >
       <Text style={[ButtonTextStyles.button, textStyles]}>{title}</Text>
-    </TouchableOpacity>
+    </TouchableNativeFeedback>
   );
 };
 

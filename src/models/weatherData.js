@@ -17,6 +17,7 @@ export default class WeatherData {
     weather,
     weatherId,
     icon,
+    clouds,
     condition,
   }) {
     this.id = nanoid();
@@ -35,6 +36,7 @@ export default class WeatherData {
     this.weather = weather;
     this.weatherId = weatherId;
     this.icon = icon;
+    this.clouds = clouds;
     this.condition = condition;
   }
 }

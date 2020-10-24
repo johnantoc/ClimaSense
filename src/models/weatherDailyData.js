@@ -24,6 +24,7 @@ export default class WeatherDailyData {
     condition,
     weatherId,
     icon,
+    clouds,
     uvIndex,
     dateStr,
     date,
@@ -51,6 +52,7 @@ export default class WeatherDailyData {
     this.condition = condition;
     this.weatherId = weatherId;
     this.icon = icon;
+    this.clouds = clouds;
     this.uvIndex = uvIndex;
     this.dateStr = dateStr;
     this.date = date;
