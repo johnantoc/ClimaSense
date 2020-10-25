@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ClimaSense",
-    "slug": "ClimaSense",
+    "slug": "clima-sense",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,12 +15,16 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.native.climasense",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "android": {
+      "package": "com.native.climasense",
+      "versionCode": 1,
       "softwareKeyboardLayoutMode": "pan"
     }
   }
