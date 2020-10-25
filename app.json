@@ -15,7 +15,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "com.native.climasense",
+      "bundleIdentifier": "com.appnativehybrid.climasense",
       "buildNumber": "1.0.0",
       "supportsTablet": true
     },
@@ -23,7 +23,7 @@
       "favicon": "./assets/favicon.png"
     },
     "android": {
-      "package": "com.native.climasense",
+      "package": "com.appnativehybrid.climasense",
       "versionCode": 1,
       "softwareKeyboardLayoutMode": "pan"
     }
