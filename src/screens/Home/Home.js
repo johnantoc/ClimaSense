@@ -37,11 +37,11 @@ const Home = (props) => {
   });
 
   const Animate = useCallback((fadeAnimVal, flexAnimVal) => {
-    Animated.stagger(100, [
+    Animated.sequence([
       Animated.timing(fadeAnim, {
         toValue: fadeAnimVal,
         duration: 300,
-        easing: Easing.linear,
+        easing: Easing.exp,
         useNativeDriver: false,
       }),
       Animated.timing(flexAnim, {
