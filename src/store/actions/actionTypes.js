@@ -17,3 +17,7 @@ export const selectLoc = {
   GETSELECTEDLOC: "GETSELECTEDLOC",
   CLEARSELECTEDLOC: "CLEARSELECTEDLOC",
 };
+
+export const keyboardEv = {
+  SHOWN: "SHOWN",
+};

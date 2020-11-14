@@ -1,8 +1,8 @@
 /**
  * Skewed Card Component.
  */
-import React, { useEffect } from "react";
-import { View, ActivityIndicator } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Image, ActivityIndicator } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { useSelector, useDispatch } from "react-redux";
 import * as Location from "expo-location";
@@ -13,6 +13,7 @@ import { getLocation, getWeatherData } from "../../../store/actions";
 
 const SkewedCard = () => {
   const dispatch = useDispatch();
+  const [locDenied, setLocDenied] = useState(false);
   const {
     weather,
     settings: { tempUnitF },
@@ -28,10 +29,14 @@ const SkewedCard = () => {
   useEffect(() => {
     (async () => {
       const { status } = await Location.requestPermissionsAsync();
-      const locationData = await Location.getCurrentPositionAsync({
-        accuracy: 4,
-      });
-      dispatch(getLocation(locationData));
+      if (status === "granted") {
+        const locationData = await Location.getCurrentPositionAsync({
+          accuracy: 4,
+        });
+        dispatch(getLocation(locationData));
+      } else {
+        setLocDenied(true);
+      }
     })();
   }, []);
 
@@ -47,8 +52,8 @@ const SkewedCard = () => {
       : weather.currentData.tempC
     : "-";
 
-  return (
-    <>
+  return !locDenied || weather.currentData ? (
+    <View style={[SkewedCardStyles.outerContainer]}>
       <ActivityIndicator
         size="large"
         color="#FFFFFF"
@@ -97,7 +102,24 @@ const SkewedCard = () => {
           </View>
         </View>
       </View>
-    </>
+    </View>
+  ) : (
+    <View style={[SkewedCardStyles.errorContainer]}>
+      <ActivityIndicator
+        size="large"
+        color="#FFFFFF"
+        style={SkewedCardStyles.loader}
+        animating={location && location.selectedLoc !== null}
+      />
+      <Image
+        style={SkewedCardStyles.logo}
+        source={require("../../../assets/logowhite.png")}
+      />
+      <RichText
+        text={"Please enable permission to access the location"}
+        styles={SkewedCardStyles.errorTxt}
+      />
+    </View>
   );
 };
 

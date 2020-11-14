@@ -8,6 +8,7 @@ import {
   ImageBackground,
   Animated,
   Easing,
+  KeyboardAvoidingView,
 } from "react-native";
 import { useSelector } from "react-redux";
 
@@ -83,13 +84,15 @@ const Home = (props) => {
       {image ? (
         <ImageBackground source={{ uri: image }} style={[HomeStyles.image]} />
       ) : null}
-      <View style={HomeStyles.infoContainer}>
-        <SkewedCard />
-        <Animated.View style={{ flex: flexAnim, opacity: fadeAnim }}>
-          <HourlyData />
-          <InfoCard navigation={navigation} />
-        </Animated.View>
-      </View>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior={"padding"}>
+        <View style={HomeStyles.infoContainer}>
+          <SkewedCard />
+          <Animated.View style={{ flex: flexAnim, opacity: fadeAnim }}>
+            <HourlyData />
+            <InfoCard navigation={navigation} />
+          </Animated.View>
+        </View>
+      </KeyboardAvoidingView>
     </View>
   );
 };

@@ -1,8 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const SkewedCardStyles = StyleSheet.create({
-  container: {
+  outerContainer: {
     flex: 0.4,
+    backgroundColor: "transparent",
+  },
+  container: {
+    flex: 1,
     backgroundColor: "transparent",
   },
   text: {
@@ -74,6 +78,21 @@ const SkewedCardStyles = StyleSheet.create({
     position: "absolute",
     top: "20%",
     left: "46%",
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  errorTxt: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    textTransform: "capitalize",
+    fontFamily: "roboto-condensed-light",
+  },
+  logo: {
+    width: 120,
+    height: 85,
   },
 });
 

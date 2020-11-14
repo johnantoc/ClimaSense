@@ -1,4 +1,10 @@
-import { weather, options, geolocation, selectLoc } from "./actionTypes";
+import {
+  weather,
+  options,
+  geolocation,
+  selectLoc,
+  keyboardEv,
+} from "./actionTypes";
 
 export function getWeatherData(data) {
   return {
@@ -49,5 +55,12 @@ export function getSelectedLocation(data) {
 export function clearSelectedLocation() {
   return {
     type: selectLoc.CLEARSELECTEDLOC,
+  };
+}
+
+export function keyboardShow(data) {
+  return {
+    type: keyboardEv.SHOWN,
+    payload: data,
   };
 }
