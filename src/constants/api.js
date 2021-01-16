@@ -1,11 +1,11 @@
 export const owmApi =
-  "https://api.openweathermap.org/data/2.5/onecall?appid=45ebcd7f3f658d38db8e4eaf2071cae8";
+  "https://api.openweathermap.org/data/2.5/onecall?appid=";
 export const apiPix =
-  "https://pixabay.com/api/?key=18746234-7183eb6f3f86f0479936ea27d";
+  "https://pixabay.com/api/?key=";
 export const locationReverseapi =
-  "https://us1.locationiq.com/v1/reverse.php?key=pk.9bd47320cc0f63fe16c714091a1dd01a";
+  "https://us1.locationiq.com/v1/reverse.php?key=";
 export const locationSearchapi =
-  "https://us1.locationiq.com/v1/search.php?key=pk.9bd47320cc0f63fe16c714091a1dd01a";
+  "https://us1.locationiq.com/v1/search.php?key=";
 
 const data = {
   lat: 10.51,
